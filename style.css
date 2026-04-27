@@ -1,124 +1,291 @@
+/* RESET BÁSICO */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #1a1a1a;
-    color: #fff;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: white;
+  min-height: 100vh;
 }
 
-header {
-    background: #DA291C; /* Vermelho bandeira Portugal */
-    padding: 40px 20px;
-    text-align: center;
-    border-bottom: 3px solid #046A38;
+/* TÍTULO - FONT VERDE DE PORTUGAL */
+.header-topo {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 30px 20px 20px 20px;
 }
 
-header h1 {
-    color: #046A38 !important; /* Verde bandeira Portugal */
-    font-size: 60px;
-    font-weight: 900;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    transform: perspective(500px) rotateX(15deg);
-    transform-origin: bottom;
-    text-shadow: 
-        0 1px 0 #fff,
-        0 2px 0 #f0f0f0,
-        0 3px 0 #ddd,
-        0 4px 5px rgba(0, 0, 0, 0.6),
-        0 0 25px rgba(255, 255, 255, 0.5); /* Glow branco pra contrastar no vermelho */
+.header-topo h1 {
+  background: #e63946;
+  color: #046a38; /* VERDE PORTUGAL */
+  display: inline-block;
+  padding: 14px 45px; /* AUMENTEI UM POUCO O PADDING */
+  border-radius: 8px;
+  font-size: 32px; /* ERA 28px, AGORA 32px */
+  font-weight: 900;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px rgba(4, 106, 56, 0.6); /* BRILHO VERDE */
+  box-shadow: 0 0 15px rgba(230, 57, 70, 0.4); /* BRILHO VERMELHO NA CAIXA */
+  letter-spacing: 1px; /* ESPAÇAMENTO PRA DAR PRESENÇA */
 }
 
-header p {
-    color: #ffffff;
-    font-size: 18px;
-    margin-top: 10px;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+.header-topo p {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #f1faee;
 }
 
-main {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 0 20px;
+/* CONTAINER DOS 3 BLOCOS */
+.container-principal {
+  max-width: 1200px;
+  width: 100%;
+  margin: 20px auto 40px auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
 }
 
-.container {
-    background: #2d2d2d;
-    padding: 30px;
-    border-radius: 10px;
-    margin-bottom: 40px;
+/* BLOCO 1 - CUBO DE PORTUGAL MENOR */
+.cubo-portugal-esquerda {
+  width: 180px;
+  height: 180px;
+  perspective: 1000px;
+  flex-shrink: 0;
+  margin-left: 30px
 }
 
-.input-group {
-    margin-bottom: 20px;
+.cubo-portugal-esquerda .cubo {
+  width: 100%;
+  height: 120%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: girar 12s infinite linear;
+  margin-left: 10px
 }
 
-.input-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
+@keyframes girar {
+  0% { transform: rotateX(0deg) rotateY(0deg); }
+  100% { transform: rotateX(360deg) rotateY(360deg); }
 }
 
-.input-group input {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
+.cubo-portugal-esquerda .face {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border: 3px solid #ffd700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 24px; /* AUMENTEI PRA FICAR LEGÍVEL */
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+  text-align: center;
+  padding: 10px;
 }
 
-button {
-    width: 100%;
-    padding: 15px;
-    background: #DA291C; /* Vermelho bandeira Portugal */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
+/* Se quiser texto menor em alguma face específica */
+.cubo-portugal-esquerda .esquerda {
+  font-size: 20px; /* SS fica menor pra caber */
+}
+.cubo-portugal-esquerda .direita {
+  font-size: 20px; /* IRS fica menor */
 }
 
-button:hover {
-    background: #b82218; /* Vermelho mais escuro no hover */
+.cubo-portugal-esquerda .frente  { 
+  transform: translateZ(90px); 
+  background: linear-gradient(to right, #046a38 50%, #da291c 50%);
+}
+.cubo-portugal-esquerda .tras   { 
+  transform: rotateY(180deg) translateZ(90px); 
+  background: linear-gradient(to right, #046a38 50%, #da291c 50%);
+}
+.cubo-portugal-esquerda .direita { 
+  transform: rotateY(90deg) translateZ(90px); 
+  background: #da291c;
+}
+.cubo-portugal-esquerda .esquerda { 
+  transform: rotateY(-90deg) translateZ(90px); 
+  background: #046a38;
+}
+.cubo-portugal-esquerda .cima { 
+  transform: rotateX(90deg) translateZ(90px); 
+  background: #046a38;
+}
+.cubo-portugal-esquerda .baixo { 
+  transform: rotateX(-90deg) translateZ(90px); 
+  background: #da291c;
 }
 
-.resultado {
-    margin-top: 20px;
-    padding: 20px;
-    background: #1a1a1a;
-    border-radius: 5px;
-    font-size: 18px;
-    display: none;
+/* BLOCO 2 - CALCULADORA 40px PRA DIREITA */
+.card-calculadora {
+  background: rgba(29, 53, 87, 0.8);
+  border: 2px solid #ffd700;
+  border-radius: 15px;
+  padding: 25px;
+  width: 380px;
+  backdrop-filter: blur(10px);
+  margin-left: 80px; /* AGORA 40px PRA DIREITA */
 }
 
-.contato {
-    background: #2d2d2d;
-    padding: 30px;
-    border-radius: 10px;
-    text-align: center;
+.card-calculadora h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #f1faee;
+  font-size: 20px;
 }
 
-.contato h2 {
-    margin-bottom: 15px;
-    color: #fff;
+.card-calculadora label {
+  display: block;
+  margin-bottom: 8px;
+  color: #a8dadc;
+  font-weight: 600;
 }
 
-.contato p {
-    margin: 10px 0;
-    font-size: 16px;
+.card-calculadora input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 2px solid #ffd700;
+  border-radius: 8px;
+  background: rgba(69, 123, 157, 0.3);
+  color: white;
+  font-size: 16px;
 }
 
-.contato a {
-    color: #1E90FF;
-    text-decoration: none;
+.card-calculadora input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
 }
 
-.contato a:hover {
-    text-decoration: underline;
+.card-calculadora button {
+  width: 100%;
+  padding: 15px;
+  background: #ffd700;
+  color: #1d3557;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.card-calculadora button:hover {
+  background: #ffcd00;
+}
+
+.resultado-calculo {
+  background: rgba(69, 123, 157, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.resultado-calculo p {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+.resultado-calculo .liquido {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffd700;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #ffd700;
+}
+
+/* BLOCO 3 - CONTATO */
+.card-contato {
+  background: rgba(29, 53, 87, 0.8);
+  border: 2px solid #ffd700;
+  border-radius: 15px;
+  padding: 25px;
+  width: 280px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.card-contato h3 {
+  margin-bottom: 8px;
+  color: #f1faee;
+  font-size: 18px;
+}
+
+.card-contato p {
+  margin-bottom: 20px;
+  color: #a8dadc;
+}
+
+.icones-contato {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.icones-contato a {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffd700;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.icones-contato a:hover {
+  transform: scale(1.1);
+  background: #ffcd00;
+}
+
+.icones-contato img {
+  width: 25px;
+  height: 25px;
+}
+
+/* RESPONSIVO PRA CELULAR */
+@media (max-width: 1100px) {
+  .container-principal {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .cubo-portugal-esquerda {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .cubo-portugal-esquerda .face {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .cubo-portugal-esquerda .frente  { transform: translateZ(75px); }
+  .cubo-portugal-esquerda .tras   { transform: rotateY(180deg) translateZ(75px); }
+  .cubo-portugal-esquerda .direita { transform: rotateY(90deg) translateZ(75px); }
+  .cubo-portugal-esquerda .esquerda { transform: rotateY(-90deg) translateZ(75px); }
+  .cubo-portugal-esquerda .cima { transform: rotateX(90deg) translateZ(75px); }
+  .cubo-portugal-esquerda .baixo { transform: rotateX(-90deg) translateZ(75px); }
+  
+  .card-calculadora {
+    margin-left: 0; /* Remove no mobile */
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .card-contato {
+    width: 90%;
+    max-width: 400px;
+  }
 }
