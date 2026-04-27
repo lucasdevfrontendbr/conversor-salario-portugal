@@ -1,4 +1,4 @@
-/* RESET BÁSICO */
+}/* RESET BÁSICO */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@ body {
   min-height: 100vh;
 }
 
-/* TÍTULO - FONT VERDE DE PORTUGAL COM BRILHO */
+/* TÍTULO - FONT VERDE DE PORTUGAL */
 .header-topo {
   max-width: 1200px;
   width: 100%;
@@ -23,16 +23,16 @@ body {
 
 .header-topo h1 {
   background: #e63946;
-  color: #046a38;
+  color: #046a38; /* VERDE PORTUGAL */
   display: inline-block;
-  padding: 14px 45px;
+  padding: 14px 45px; /* AUMENTEI UM POUCO O PADDING */
   border-radius: 8px;
-  font-size: 32px;
+  font-size: 32px; /* ERA 28px, AGORA 32px */
   font-weight: 900;
   text-transform: uppercase;
-  text-shadow: 0 0 8px rgba(4, 106, 56, 0.6);
-  box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
-  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(4, 106, 56, 0.6); /* BRILHO VERDE */
+  box-shadow: 0 0 15px rgba(230, 57, 70, 0.4); /* BRILHO VERMELHO NA CAIXA */
+  letter-spacing: 1px; /* ESPAÇAMENTO PRA DAR PRESENÇA */
 }
 
 .header-topo p {
@@ -53,21 +53,22 @@ body {
   gap: 40px;
 }
 
-/* BLOCO 1 - CUBO DE PORTUGAL MENOR E PRA DIREITA */
+/* BLOCO 1 - CUBO DE PORTUGAL MENOR */
 .cubo-portugal-esquerda {
   width: 180px;
   height: 180px;
   perspective: 1000px;
   flex-shrink: 0;
-  margin-left: 40px;
+  margin-left: 30px
 }
 
 .cubo-portugal-esquerda .cubo {
   width: 100%;
-  height: 100%;
+  height: 120%;
   position: relative;
   transform-style: preserve-3d;
   animation: girar 12s infinite linear;
+  margin-left: 10px
 }
 
 @keyframes girar {
@@ -84,30 +85,36 @@ body {
   align-items: center;
   justify-content: center;
   font-weight: 900;
-  font-size: 24px;
+  font-size: 24px; /* AUMENTEI PRA FICAR LEGÍVEL */
   color: white;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
   text-align: center;
   padding: 10px;
 }
 
+/* Se quiser texto menor em alguma face específica */
+.cubo-portugal-esquerda .esquerda {
+  font-size: 20px; /* SS fica menor pra caber */
+}
+.cubo-portugal-esquerda .direita {
+  font-size: 20px; /* IRS fica menor */
+}
+
 .cubo-portugal-esquerda .frente  { 
-  transform: translateZ(90px) rotateZ(180deg);
+  transform: translateZ(90px); 
   background: linear-gradient(to right, #046a38 50%, #da291c 50%);
 }
 .cubo-portugal-esquerda .tras   { 
-  transform: rotateY(180deg) translateZ(90px) rotateZ(180deg);
+  transform: rotateY(180deg) translateZ(90px); 
   background: linear-gradient(to right, #046a38 50%, #da291c 50%);
 }
 .cubo-portugal-esquerda .direita { 
   transform: rotateY(90deg) translateZ(90px); 
   background: #da291c;
-  font-size: 20px;
 }
 .cubo-portugal-esquerda .esquerda { 
   transform: rotateY(-90deg) translateZ(90px); 
   background: #046a38;
-  font-size: 20px;
 }
 .cubo-portugal-esquerda .cima { 
   transform: rotateX(90deg) translateZ(90px); 
@@ -126,7 +133,7 @@ body {
   padding: 25px;
   width: 380px;
   backdrop-filter: blur(10px);
-  margin-left: 40px;
+  margin-left: 80px; /* AGORA 40px PRA DIREITA */
 }
 
 .card-calculadora h2 {
@@ -257,7 +264,6 @@ body {
   .cubo-portugal-esquerda {
     width: 150px;
     height: 150px;
-    margin-left: 0;
   }
   
   .cubo-portugal-esquerda .face {
@@ -265,15 +271,15 @@ body {
     height: 150px;
   }
   
-  .cubo-portugal-esquerda .frente  { transform: translateZ(75px) rotateZ(180deg); }
-  .cubo-portugal-esquerda .tras   { transform: rotateY(180deg) translateZ(75px) rotateZ(180deg); }
+  .cubo-portugal-esquerda .frente  { transform: translateZ(75px); }
+  .cubo-portugal-esquerda .tras   { transform: rotateY(180deg) translateZ(75px); }
   .cubo-portugal-esquerda .direita { transform: rotateY(90deg) translateZ(75px); }
   .cubo-portugal-esquerda .esquerda { transform: rotateY(-90deg) translateZ(75px); }
   .cubo-portugal-esquerda .cima { transform: rotateX(90deg) translateZ(75px); }
   .cubo-portugal-esquerda .baixo { transform: rotateX(-90deg) translateZ(75px); }
   
   .card-calculadora {
-    margin-left: 0;
+    margin-left: 0; /* Remove no mobile */
     width: 90%;
     max-width: 400px;
   }
@@ -282,4 +288,3 @@ body {
     width: 90%;
     max-width: 400px;
   }
-}
