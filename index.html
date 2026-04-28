@@ -1,49 +1,54 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor Salário Líquido Portugal 2025</title>
+    <title>Conversor Salário Portugal</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="cubo-portugal-esquerda">
-        <div class="face frente">€</div>
-        <div class="face tras">€</div>
-        <div class="face direita">€</div>
-        <div class="face esquerda">€</div>
-        <div class="face topo">€</div>
-        <div class="face baixo">€</div>
+    <div class="banner-titulo">
+        <h1>CONVERSOR SALÁRIO PORTUGAL</h1>
     </div>
+    
+    <p class="subtitulo">Converta seu salário bruto para líquido</p>
 
-    <div class="header-topo">
-        <h1>Conversor de Salário Líquido Portugal 2025</h1>
-        <p>Calcule seu salário líquido com base nas taxas de IRS e Segurança Social de 2025</p>
-    </div>
-
-    <div class="card-calculadora">
-        <div class="input-group">
-            <label for="salarioBruto">Salário Bruto Mensal (€)</label>
-            <input type="number" id="salarioBruto" placeholder="Ex: 1500">
-        </div>
-        
-        <div class="input-group">
-            <label for="dependentes">Nº de Dependentes</label>
-            <input type="number" id="dependentes" placeholder="Ex: 0">
+    <div class="container-principal">
+        <div class="cubo-portugal">
+            <div class="face frente">PORTUGAL</div>
+            <div class="face tras"></div>
+            <div class="face direita"></div>
+            <div class="face esquerda"></div>
+            <div class="face topo"></div>
+            <div class="face baixo"></div>
         </div>
 
-        <button id="calcularBtn">Calcular Salário Líquido</button>
+        <div class="card-calculadora">
+            <div class="input-group">
+                <label>Salário Bruto Mensal (€)</label>
+                <input type="number" id="salarioBruto" placeholder="2500">
+            </div>
+            
+            <div class="input-group">
+                <label>Nº de Dependentes</label>
+                <input type="number" id="dependentes" placeholder="3">
+            </div>
 
-        <div id="resultado"></div>
-    </div>
+            <button id="calcularBtn">Calcular Salário Líquido</button>
 
-    <div class="card-contato">
-        <h3>Gostou do projeto? Fala comigo!</h3>
-        <p><strong>Lucas Lima - Dev Junior</strong></p>
-        <p>Email: <a href="mailto:lucasduti10@gmail.com">lucasduti10@gmail.com</a></p>
-        <p>WhatsApp: <a href="https://wa.me/5521988862013" target="_blank">+55 21 98886-2013</a></p>
-        <p>LinkedIn: <a href="#" target="_blank">Lucas Lima</a></p>
-        <p>GitHub: <a href="https://github.com/lucasdevfrontendbr" target="_blank">lucasdevfrontendbr</a></p>
+            <div id="resultado"></div>
+        </div>
+
+        <div class="card-contato">
+            <h3>Gostou do projeto? Fala comigo!</h3>
+            <p>Lucas Lima - Dev Junior</p>
+            <div class="icones">
+                <a href="#" class="icone">in</a>
+                <a href="#" class="icone">GH</a>
+                <a href="mailto:lucasdutil10@gmail.com" class="icone">@</a>
+                <a href="https://wa.me/5521998863019" class="icone">W</a>
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
