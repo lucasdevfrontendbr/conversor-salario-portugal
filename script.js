@@ -1,33 +1,29 @@
-function calcularSalario() {
-    const salarioBruto = parseFloat(document.getElementById('salarioBruto').value);
+document.getElementById('calcularBtn').addEventListener('click', function() {
+    const salarioBruto = parseFloat(document.getElementById('salarioBruto').value) || 0;
     const dependentes = parseInt(document.getElementById('dependentes').value) || 0;
-    const resultadoDiv = document.getElementById('resultado');
-
-    if (isNaN(salarioBruto) || salarioBruto <= 0) {
-        alert('Digite um salário válido!');
+    
+    if (salarioBruto <= 0) {
+        alert('Digite um salário válido');
         return;
     }
 
-    const taxaSS = 0.11;
-    const descontoSS = salarioBruto * taxaSS;
+    // Cálculo Portugal 2025 simplificado
+    const segurancaSocial = salarioBruto * 0.11;
+    let taxaIRS = 0.14; // Base
     
-    let taxaIRS = 0.145;
-    if (salarioBruto > 2000) taxaIRS = 0.185;
-    if (salarioBruto > 3000) taxaIRS = 0.25;
+    // Redução por dependentes
+    if (dependentes > 0) taxaIRS -= (dependentes * 0.02);
+    if (taxaIRS < 0.05) taxaIRS = 0.05;
     
-    taxaIRS -= dependentes * 0.005;
-    if (taxaIRS < 0) taxaIRS = 0;
-    
-    const descontoIRS = salarioBruto * taxaIRS;
-    const salarioLiquido = salarioBruto - descontoSS - descontoIRS;
+    const irsRetido = salarioBruto * taxaIRS;
+    const salarioLiquido = salarioBruto - segurancaSocial - irsRetido;
 
+    const resultadoDiv = document.getElementById('resultado');
     resultadoDiv.style.display = 'block';
     resultadoDiv.innerHTML = `
-        <p><strong>Salário Bruto:</strong> €${salarioBruto.toFixed(2)}</p>
-        <p><strong>Desconto SS (11%):</strong> -€${descontoSS.toFixed(2)}</p>
-        <p><strong>Desconto IRS (${(taxaIRS*100).toFixed(1)}%):</strong> -€${descontoIRS.toFixed(2)}</p>
-        <p><strong>Dependentes:</strong> ${dependentes}</p>
-        <hr style="margin: 10px 0;">
-        <p style="font-size: 22px; color: #046A38;"><strong>Salário Líquido: €${salarioLiquido.toFixed(2)}</strong></p>
+        Salário Bruto: € ${salarioBruto.toFixed(2)}<br>
+        Segurança Social (11%): - € ${segurancaSocial.toFixed(2)}<br>
+        IRS Retido: - € ${irsRetido.toFixed(2)}<br>
+        <strong>Salário Líquido: € ${salarioLiquido.toFixed(2)}</strong>
     `;
-}
+});
