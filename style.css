@@ -1,275 +1,174 @@
-/* RESET BÁSICO */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
-  color: white;
-  min-height: 100vh;
-}
-
-.header-topo {
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  padding: 30px 20px 20px 20px;
-}
-
-.header-topo h1 {
-  background: #e63946;
-  color: #046a38;
-  display: inline-block;
-  padding: 14px 45px;
-  border-radius: 8px;
-  font-size: 32px;
-  font-weight: 900;
-  text-transform: uppercase;
-  text-shadow: 0 0 8px rgba(4, 106, 56, 0.6);
-  box-shadow: 0 0 15px rgba(230, 57, 70, 0.4);
-  letter-spacing: 1px;
-}
-
-.header-topo p {
-  margin-top: 15px;
-  font-size: 18px;
-  color: #f1faee;
-}
-
-.container-principal {
-  max-width: 1200px;
-  width: 100%;
-  margin: 20px auto 40px auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 40px;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
 }
 
 .cubo-portugal-esquerda {
-  width: 180px;
-  height: 180px;
-  perspective: 1000px;
-  flex-shrink: 0;
-  margin-left: 40px;
-}
-
-.cubo-portugal-esquerda .cubo {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  animation: girar 12s infinite linear;
-}
-
-@keyframes girar {
-  0% { transform: rotateX(0deg) rotateY(0deg); }
-  100% { transform: rotateX(360deg) rotateY(360deg); }
+    position: fixed;
+    top: 50%;
+    left: 40px;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    transform-style: preserve-3d;
+    animation: girarCubo 12s infinite linear;
+    z-index: 1;
 }
 
 .cubo-portugal-esquerda .face {
-  position: absolute;
-  width: 180px;
-  height: 180px;
-  border: 3px solid #ffd700;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 900;
-  font-size: 24px;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
-  text-align: center;
-  padding: 10px;
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(255, 215, 0, 0.6);
+    background: rgba(30, 60, 114, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFD700;
 }
 
-.cubo-portugal-esquerda .frente  { 
-  transform: translateZ(90px) rotateZ(180deg);
-  background: linear-gradient(to right, #046a38 50%, #da291c 50%);
+.frente  { transform: rotateY(0deg) translateZ(25px); }
+.tras    { transform: rotateY(180deg) translateZ(25px); }
+.direita { transform: rotateY(90deg) translateZ(25px); }
+.esquerda{ transform: rotateY(-90deg) translateZ(25px); }
+.topo    { transform: rotateX(90deg) translateZ(25px); }
+.baixo   { transform: rotateX(-90deg) translateZ(25px); }
+
+@keyframes girarCubo {
+    from { transform: translateY(-50%) rotateX(0deg) rotateY(0deg); }
+    to { transform: translateY(-50%) rotateX(360deg) rotateY(360deg); }
 }
-.cubo-portugal-esquerda .tras   { 
-  transform: rotateY(180deg) translateZ(90px) rotateZ(180deg);
-  background: linear-gradient(to right, #046a38 50%, #da291c 50%);
+
+.header-topo {
+    text-align: center;
+    margin-bottom: 30px;
+    z-index: 2;
 }
-.cubo-portugal-esquerda .direita { 
-  transform: rotateY(90deg) translateZ(90px); 
-  background: #da291c;
-  font-size: 20px;
+
+.header-topo h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #00FF88;
+    text-shadow: 0 0 10px #00FF88, 0 0 20px #00FF88;
+    margin-bottom: 10px;
 }
-.cubo-portugal-esquerda .esquerda { 
-  transform: rotateY(-90deg) translateZ(90px); 
-  background: #046a38;
-  font-size: 20px;
-}
-.cubo-portugal-esquerda .cima { 
-  transform: rotateX(90deg) translateZ(90px); 
-  background: #046a38;
-}
-.cubo-portugal-esquerda .baixo { 
-  transform: rotateX(-90deg) translateZ(90px); 
-  background: #da291c;
+
+.header-topo p {
+    font-size: 1rem;
+    opacity: 0.9;
 }
 
 .card-calculadora {
-  background: rgba(29, 53, 87, 0.8);
-  border: 2px solid #ffd700;
-  border-radius: 15px;
-  padding: 25px;
-  width: 380px;
-  backdrop-filter: blur(10px);
-  margin-left: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    color: #333;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+    z-index: 2;
 }
 
-.card-calculadora h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #f1faee;
-  font-size: 20px;
+.input-group {
+    margin-bottom: 20px;
 }
 
-.card-calculadora label {
-  display: block;
-  margin-bottom: 8px;
-  color: #a8dadc;
-  font-weight: 600;
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1e3c72;
 }
 
-.card-calculadora input {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 20px;
-  border: 2px solid #ffd700;
-  border-radius: 8px;
-  background: rgba(69, 123, 157, 0.3);
-  color: white;
-  font-size: 16px;
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
 }
 
-.card-calculadora button {
-  width: 100%;
-  padding: 15px;
-  background: #ffd700;
-  color: #1d3557;
-  border: none;
-  border-radius: 8px;
-  font-size: 18px;
-  font-weight: 700;
-  cursor: pointer;
-  margin-bottom: 20px;
+.input-group input:focus {
+    outline: none;
+    border-color: #2a5298;
 }
 
-.card-calculadora button:hover {
-  background: #ffcd00;
+#calcularBtn {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
-.resultado-calculo {
-  background: rgba(69, 123, 157, 0.2);
-  padding: 15px;
-  border-radius: 8px;
+#calcularBtn:hover {
+    transform: translateY(-2px);
 }
 
-.resultado-calculo p {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
-  font-size: 15px;
-}
-
-.resultado-calculo .liquido {
-  font-size: 18px;
-  font-weight: 700;
-  color: #ffd700;
-  margin-top: 10px;
-  padding-top: 10px;
-  border-top: 1px solid #ffd700;
+#resultado {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f0f8ff;
+    border-radius: 8px;
+    color: #1e3c72;
+    font-weight: 600;
+    text-align: center;
+    display: none;
 }
 
 .card-contato {
-  background: rgba(29, 53, 87, 0.8);
-  border: 2px solid #ffd700;
-  border-radius: 15px;
-  padding: 25px;
-  width: 280px;
-  text-align: center;
-  flex-shrink: 0;
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    max-width: 400px;
+    width: 100%;
 }
 
 .card-contato h3 {
-  margin-bottom: 8px;
-  color: #f1faee;
-  font-size: 18px;
+    color: #FFD700;
+    margin-bottom: 15px;
 }
 
 .card-contato p {
-  margin-bottom: 20px;
-  color: #a8dadc;
+    margin: 8px 0;
 }
 
-.icones-contato {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
+.card-contato a {
+    color: #00FF88;
+    text-decoration: none;
 }
 
-.icones-contato a {
-  width: 45px;
-  height: 45px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #ffd700;
-  border-radius: 8px;
-  transition: 0.3s;
+@media (max-width: 768px) {
+    .cubo-portugal-esquerda {
+        display: none;
+    }
+    .header-topo h1 {
+        font-size: 1.8rem;
+    }
 }
-
-.icones-contato a:hover {
-  transform: scale(1.1);
-  background: #ffcd00;
-}
-
-.icones-contato img {
-  width: 25px;
-  height: 25px;
-}
-
-@media (max-width: 1100px) {
-  .container-principal {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-  }
-  
-  .cubo-portugal-esquerda {
-    width: 150px;
-    height: 150px;
-    margin-left: 0;
-  }
-  
-  .cubo-portugal-esquerda .face {
-    width: 150px;
-    height: 150px;
-  }
-  
-  .cubo-portugal-esquerda .frente  { transform: translateZ(75px) rotateZ(180deg); }
-  .cubo-portugal-esquerda .tras   { transform: rotateY(180deg) translateZ(75px) rotateZ(180deg); }
-  .cubo-portugal-esquerda .direita { transform: rotateY(90deg) translateZ(75px); }
-  .cubo-portugal-esquerda .esquerda { transform: rotateY(-90deg) translateZ(75px); }
-  .cubo-portugal-esquerda .cima { transform: rotateX(90deg) translateZ(75px); }
-  .cubo-portugal-esquerda .baixo { transform: rotateX(-90deg) translateZ(75px); }
-  
-  .card-calculadora {
-    margin-left: 0;
-    width: 90%;
-    max-width: 400px;
-  }
-  
-  .card-contato {
-    width: 90%;
-    max-width: 400px;
-  }
-}/_ _/
