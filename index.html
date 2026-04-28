@@ -3,41 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor Salário Portugal</title>
+    <title>Conversor Salário Líquido Portugal 2025</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Conversor Salário Portugal</h1>
-        <p>Converta seu salário bruto para líquido</p>
-    </header>
+    <div class="cubo-portugal-esquerda">
+        <div class="face frente">€</div>
+        <div class="face tras">€</div>
+        <div class="face direita">€</div>
+        <div class="face esquerda">€</div>
+        <div class="face topo">€</div>
+        <div class="face baixo">€</div>
+    </div>
 
-    <main>
-        <div class="container">
-            <div class="input-group">
-                <label for="salarioBruto">Salário Bruto Mensal (€)</label>
-                <input type="number" id="salarioBruto" placeholder="Ex: 1500">
-            </div>
+    <div class="header-topo">
+        <h1>Conversor de Salário Líquido Portugal 2025</h1>
+        <p>Calcule seu salário líquido com base nas taxas de IRS e Segurança Social de 2025</p>
+    </div>
 
-            <div class="input-group">
-                <label for="dependentes">Nº de Dependentes</label>
-                <input type="number" id="dependentes" placeholder="Ex: 0">
-            </div>
-
-            <button onclick="calcularSalario()">Calcular Salário Líquido</button>
-
-            <div id="resultado" class="resultado"></div>
+    <div class="card-calculadora">
+        <div class="input-group">
+            <label for="salarioBruto">Salário Bruto Mensal (€)</label>
+            <input type="number" id="salarioBruto" placeholder="Ex: 1500">
+        </div>
+        
+        <div class="input-group">
+            <label for="dependentes">Nº de Dependentes</label>
+            <input type="number" id="dependentes" placeholder="Ex: 0">
         </div>
 
-        <div class="contato">
-            <h2>Gostou do projeto? Fala comigo!</h2>
-            <p>Lucas Lima - Dev Junior</p>
-            <p>Email: <a href="mailto:lucasduti10@gmail.com">lucasduti10@gmail.com</a></p>
-            <p>WhatsApp: <a href="https://wa.me/5521988862013" target="_blank">+55 21 98886-2013</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/lucas-lima-6b97422b9/" target="_blank">Lucas Lima</a></p>
-            <p>GitHub: <a href="https://github.com/lucasdevfrontendbr" target="_blank">lucasdevfrontendbr</a></p>
-        </div>
-    </main>
+        <button id="calcularBtn">Calcular Salário Líquido</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <div class="card-contato">
+        <h3>Gostou do projeto? Fala comigo!</h3>
+        <p><strong>Lucas Lima - Dev Junior</strong></p>
+        <p>Email: <a href="mailto:lucasduti10@gmail.com">lucasduti10@gmail.com</a></p>
+        <p>WhatsApp: <a href="https://wa.me/5521988862013" target="_blank">+55 21 98886-2013</a></p>
+        <p>LinkedIn: <a href="#" target="_blank">Lucas Lima</a></p>
+        <p>GitHub: <a href="https://github.com/lucasdevfrontendbr" target="_blank">lucasdevfrontendbr</a></p>
+    </div>
 
     <script src="script.js"></script>
 </body>
