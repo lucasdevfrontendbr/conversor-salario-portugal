@@ -1,56 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conversor Salário Portugal</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conversor Salário Portugal</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="banner-titulo">
-        <h1>CONVERSOR SALÁRIO PORTUGAL</h1>
-    </div>
+
+  <header class="header-topo">
+    <h1><span class="titulo-portugal">CONVERSOR SALÁRIO PORTUGAL</span></h1>
+    <p>Converta seu salário bruto para líquido</p>
+  </header>
+
+  <main class="container-principal">
     
-    <p class="subtitulo">Converta seu salário bruto para líquido</p>
+    <div class="cubo-portugal-esquerda">
+  <div class="cubo">
+    <div class="face frente">PORTUGAL</div>
+    <div class="face tras">€</div>
+    <div class="face direita">IRS</div>
+    <div class="face esquerda">SS</div>
+    <div class="face cima">2026</div>
+    <div class="face baixo">SALÁRIO</div>
+  </div>
+</div>
 
-    <div class="container-principal">
-        <div class="cubo-portugal">
-            <div class="face frente"><span>PORTUGAL</span></div>
-            <div class="face tras"></div>
-            <div class="face direita"></div>
-            <div class="face esquerda"></div>
-            <div class="face topo"></div>
-            <div class="face baixo"></div>
-        </div>
-
-        <div class="card-calculadora">
-            <div class="input-group">
-                <label>Salário Bruto Mensal (€)</label>
-                <input type="number" id="salarioBruto" placeholder="2500">
-            </div>
-            
-            <div class="input-group">
-                <label>Nº de Dependentes</label>
-                <input type="number" id="dependentes" placeholder="3">
-            </div>
-
-            <button id="calcularBtn">Calcular Salário Líquido</button>
-
-            <div id="resultado"></div>
-        </div>
-
-        <div class="card-contato">
-            <h3>Gostou do projeto? Fala comigo!</h3>
-            <p>Lucas Lima - Dev Junior</p>
-            <div class="icones">
-                <a href="https://www.linkedin.com/in/lucas-lima-94b1b62b9" target="_blank" class="icone">in</a>
-                <a href="https://github.com/lucasdevfrontendbr" target="_blank" class="icone">GH</a>
-                <a href="mailto:lucasdutil10@gmail.com" class="icone">@</a>
-                <a href="https://wa.me/5521998863019" target="_blank" class="icone">W</a>
-            </div>
-        </div>
+    <!-- CARD CALCULADORA -->
+    <div class="card-calculadora">
+      <h2>Salário Bruto Mensal (€)</h2>
+      <input type="number" id="salario" placeholder="Ex: 1500">
+      
+      <h2>Nº de Dependentes</h2>
+      <input type="number" id="dependentes" placeholder="Ex: 0">
+      
+      <button onclick="calcular()">Calcular Salário Líquido</button>
+      
+      <div id="resultado"></div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- CARD CONTATO COM ÍCONES CENTRALIZADOS -->
+    <div class="card-contato">
+      <h3>Gostou do projeto? Fala comigo!</h3>
+      <p class="nome"><strong>Lucas Lima - Dev Junior</strong></p>
+      
+      <div class="icones-contato">
+        <a href="https://www.linkedin.com/in/lucas-lima-6b97422b9/" target="_blank" title="Meu LinkedIn">
+          <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+        </a>
+        
+        <a href="https://github.com/lucasdevfrontendbr" target="_blank" title="Meu GitHub">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733609.png" alt="GitHub">
+        </a>
+        
+        <a href="mailto:lucasduti10@gmail.com" title="Me mandar Email">
+          <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Gmail">
+        </a>
+        
+        <a href="https://wa.me/5521988862013" target="_blank" title="Me chamar no WhatsApp">
+          <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
