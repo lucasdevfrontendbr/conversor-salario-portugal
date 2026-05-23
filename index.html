@@ -55,74 +55,82 @@
             outline: none;
             border-color: #667eea;
         }
-        button {
-            width: 100%;
-            background: #667eea;
-            color: white;
-            border: none;
-            padding: 14px;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        button:hover { background: #5a67d8; }
         .result {
             margin-top: 24px;
             padding: 20px;
             background: #f7fafc;
             border-radius: 8px;
             border-left: 4px solid #667eea;
+            min-height: 80px;
+        }
+        .result-value {
+            font-size: 28px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 8px;
+        }
+        .result-detail {
+            color: #718096;
+            font-size: 13px;
+            line-height: 1.6;
         }
         @media (max-width: 480px) {
             body { padding: 16px; }
             .container { padding: 24px; }
             h1 { font-size: 20px; }
+            .result-value { font-size: 24px; }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Conversor Salário Portugal</h1>
-        <p class="subtitle">Calcula o teu salário líquido em Portugal</p>
+        <p class="subtitle">Calcula automaticamente o teu salário líquido</p>
         
         <div class="form-group">
             <label for="bruto">Salário Bruto Mensal (€)</label>
-            <input type="number" id="bruto" placeholder="Ex: 1500">
+            <input type="number" id="bruto" placeholder="Ex: 1500" oninput="calcular()">
         </div>
         
         <div class="form-group">
             <label for="dependentes">Nº de Dependentes</label>
-            <input type="number" id="dependentes" placeholder="Ex: 0">
+            <input type="number" id="dependentes" placeholder="Ex: 0" oninput="calcular()">
         </div>
         
-        <button onclick="calcular()">Calcular Salário Líquido</button>
-        
-        <div id="resultado" class="result" style="display: none;"></div>
+        <div id="resultado" class="result">
+            <div class="result-value">€0.00</div>
+            <div class="result-detail">Insere o salário bruto para ver o cálculo</div>
+        </div>
     </div>
 
     <script>
         function calcular() {
-            const bruto = parseFloat(document.getElementById('bruto').value);
+            const bruto = parseFloat(document.getElementById('bruto').value) || 0;
             const dependentes = parseInt(document.getElementById('dependentes').value) || 0;
             
-            if (!bruto) {
-                alert('Insere o salário bruto');
+            if (bruto === 0) {
+                document.getElementById('resultado').innerHTML = `
+                    <div class="result-value">€0.00</div>
+                    <div class="result-detail">Insere o salário bruto para ver o cálculo</div>
+                `;
                 return;
             }
             
-            // Cálculo simplificado IRS + SS 11%
             const ss = bruto * 0.11;
-            const irs = bruto * 0.15 - (dependentes * 50);
+            const irs = Math.max(0, bruto * 0.15 - (dependentes * 50));
             const liquido = bruto - ss - irs;
             
-            document.getElementById('resultado').style.display = 'block';
             document.getElementById('resultado').innerHTML = `
-                <strong>Salário Líquido: €${liquido.toFixed(2)}</strong><br>
-                <small>Seg. Social: -€${ss.toFixed(2)} | IRS: -€${irs.toFixed(2)}</small>
+                <div class="result-value">€${liquido.toFixed(2)}</div>
+                <div class="result-detail">
+                    Bruto: €${bruto.toFixed(2)}<br>
+                    Seg. Social 11%: -€${ss.toFixed(2)}<br>
+                    IRS: -€${irs.toFixed(2)}<br>
+                    <strong>Líquido: €${liquido.toFixed(2)}</strong>
+                </div>
             `;
         }
+        calcular();
     </script>
 </body>
 </html>
