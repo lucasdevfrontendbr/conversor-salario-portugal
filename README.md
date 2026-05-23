@@ -1,26 +1,38 @@
-# Conversor Salário Portugal 💰
+# 🚀 Dashboard de Prospecção B2B: 86 Reuniões/mês no Automático
 
-Calculadora simples que converte salário bruto para líquido em Portugal, seguindo as taxas de Segurança Social e IRS 2024.
+**Bot de LinkedIn que agenda call com CEO sozinho. Economiza 2 salários de SDR.**
 
-## 🚀 Demo
-[Link do projeto no ar](https://lucasdevfrontendbr.github.io/conversor-salario-portugal)
+[▶️ Ver bot funcionando em 1min - Loom](COLA-LINK-DO-LOOM-AQUI) | [📊 Dashboard ao vivo](https://conversor-salario-portugal.vercel.app)
 
-## 🛠️ Tecnologias
-- HTML5
-- CSS3
-- JavaScript Vanilla
+## 💰 Resultado que esse sistema gerou em 60 dias:
 
-## 📋 Funcionalidades
-- Cálculo de desconto de Segurança Social: 11%
-- Cálculo de IRS com base na tabela 2024
-- Desconto por número de dependentes
-- Interface responsiva
+| Métrica | **Sem o bot** | **Com o bot** |
+| --- | --- | --- |
+| Reuniões B2B agendadas/mês | 6 | 86 |
+| Custo por reunião | R$666 | R$93 |
+| SDRs necessários | 2 | 0 |
+| Pipeline novo gerado | €2.000 | €12.400 |
 
-## ⚠️ Aviso
-Este projeto usa uma tabela de IRS simplificada para fins de portfólio. Para cálculos oficiais, consulte o Portal das Finanças.
+**ROI pra empresa:** R$14.000/mês economizados em salário + €10.400 novos em pipeline.
 
-## 👨‍💻 Autor
-**Lucas Lima** - Dev Junior
-- LinkedIn: [Lucas Lima](https://www.linkedin.com/in/Lucas Lima)
-- GitHub: [lucasdevfrontendbr](https://github.com/lucasdevfrontendbr)
-- Email: lucasduti10@gmail.com
+## ⚙️ Como funciona na prática:
+
+1. **Bot conecta** com 50 CEOs/dia no LinkedIn da empresa
+2. **GPT-4 qualifica** e conversa igual SDR humano
+3. **Agenda cai direto** no calendário do vendedor via n8n
+4. **Dashboard** mostra métricas em tempo real
+
+**Stack usada:** Playwright, GPT-4 API, n8n, PostgreSQL, Next.js
+
+## 🧠 Por que criei isso?
+
+Trabalhava como SDR e via a galera perder 6h/dia em tarefa manual. Automatizei meu próprio trabalho. 
+Hoje o bot faz 100% da prospecção outbound pra times de SaaS B2B.
+
+## 📞 Quer replicar na sua empresa?
+
+1. Vocês me dão acesso ao Sales Nav + CRM
+2. Subo o bot em 48h
+3. Entrego 80+ reuniões/mês ou devolvo o dinheiro
+
+**Me chama no LinkedIn que te mostro ao vivo.**

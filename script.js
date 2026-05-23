@@ -45,4 +45,8 @@ function calcular() {
       <p class="liquido-final"><span>Salário Líquido:</span> <strong>€ ${salarioLiquido.toFixed(2)}</strong></p>
     </div>
   `;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 38ddf1df93ff64efe8004f5825e7b6b3c0a216e7
