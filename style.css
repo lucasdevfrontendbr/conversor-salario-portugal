@@ -59,7 +59,7 @@ body {
 .scene {
     width: 200px;
     height: 200px;
-    perspective: 800px;
+    perspective: 1000px;
 }
 
 .cube {
@@ -83,9 +83,18 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     font-weight: 900;
     text-shadow: 2px 2px 0px #000;
+    text-align:center;
+    padding: 10px;
+    word-break:break-word;
+    line-height:1.1;
+}
+.face.back{
+    background:#00c853;
+    transform:rotatey(180deg) translatez(100px);
+    font-size:1.2rem
 }
 
 .front {
