@@ -7,7 +7,7 @@ body{background:#0a0e27;font-family:'Orbitron',sans-serif;color:#fff;min-height:
 .subtitle{font-size:1.2rem;color:#fff;margin-bottom:40px}
 .main-grid{display:grid;grid-template-columns:280px 1fr 280px;gap:30px;align-items:start}
 .cube-wrapper{display:flex;justify-content:center;padding-top:40px}
-.scene{width:200px;height:200px;perspective:1000px;transform-style:preserve-3d}
+.scene{width:150px;height:150px;perspective:1000px;transform-style:preserve-3d}
 .cube{width:100%;height:100%;position:relative;transform-style:preserve-3d;animation:rotateCube 12s infinite linear}
 @keyframes rotateCube{0%{transform:rotateX(0deg) rotateY(0deg)}100%{transform:rotateX(360deg) rotateY(360deg)}}
 .face{position:absolute;width:200px;height:200px;border:4px solid #ffdd00;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:900;text-shadow:2px 2px 0px #000;text-align:center;padding:10px;backface-visibility:hidden}
